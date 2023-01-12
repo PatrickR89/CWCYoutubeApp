@@ -13,6 +13,9 @@
 		CD565EEC2970075C00B26FC7 /* YoutubeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD565EEA2970075C00B26FC7 /* YoutubeApp.xcdatamodeld */; };
 		CD565EEE2970075E00B26FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD565EED2970075E00B26FC7 /* Assets.xcassets */; };
 		CD565EF12970075E00B26FC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD565EEF2970075E00B26FC7 /* LaunchScreen.storyboard */; };
+		CD565EF92970132200B26FC7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD565EF82970132200B26FC7 /* Constants.swift */; };
+		CD565EFB2970169100B26FC7 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD565EFA2970169100B26FC7 /* Video.swift */; };
+		CD565EFF297017E900B26FC7 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD565EFE297017E900B26FC7 /* APICaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		CD565EED2970075E00B26FC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD565EF02970075E00B26FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD565EF22970075E00B26FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD565EF82970132200B26FC7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CD565EFA2970169100B26FC7 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		CD565EFE297017E900B26FC7 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,42 @@
 		CD565EE02970075C00B26FC7 /* YoutubeApp */ = {
 			isa = PBXGroup;
 			children = (
+				CD565F00297017F400B26FC7 /* Services */,
+				CD565EFD297016AE00B26FC7 /* ViewControllers */,
+				CD565EFC2970169E00B26FC7 /* Models */,
 				CD565EE12970075C00B26FC7 /* AppDelegate.swift */,
 				CD565EE32970075C00B26FC7 /* SceneDelegate.swift */,
-				CD565EE52970075C00B26FC7 /* ViewController.swift */,
+				CD565EF82970132200B26FC7 /* Constants.swift */,
 				CD565EED2970075E00B26FC7 /* Assets.xcassets */,
 				CD565EEF2970075E00B26FC7 /* LaunchScreen.storyboard */,
 				CD565EF22970075E00B26FC7 /* Info.plist */,
 				CD565EEA2970075C00B26FC7 /* YoutubeApp.xcdatamodeld */,
 			);
 			path = YoutubeApp;
+			sourceTree = "<group>";
+		};
+		CD565EFC2970169E00B26FC7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD565EFA2970169100B26FC7 /* Video.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD565EFD297016AE00B26FC7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD565EE52970075C00B26FC7 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CD565F00297017F400B26FC7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CD565EFE297017E900B26FC7 /* APICaller.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD565EF92970132200B26FC7 /* Constants.swift in Sources */,
+				CD565EFB2970169100B26FC7 /* Video.swift in Sources */,
 				CD565EE62970075C00B26FC7 /* ViewController.swift in Sources */,
+				CD565EFF297017E900B26FC7 /* APICaller.swift in Sources */,
 				CD565EEC2970075C00B26FC7 /* YoutubeApp.xcdatamodeld in Sources */,
 				CD565EE22970075C00B26FC7 /* AppDelegate.swift in Sources */,
 				CD565EE42970075C00B26FC7 /* SceneDelegate.swift in Sources */,
