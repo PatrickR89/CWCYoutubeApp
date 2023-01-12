@@ -10,7 +10,6 @@
 		CD565EE22970075C00B26FC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD565EE12970075C00B26FC7 /* AppDelegate.swift */; };
 		CD565EE42970075C00B26FC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD565EE32970075C00B26FC7 /* SceneDelegate.swift */; };
 		CD565EE62970075C00B26FC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD565EE52970075C00B26FC7 /* ViewController.swift */; };
-		CD565EE92970075C00B26FC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD565EE72970075C00B26FC7 /* Main.storyboard */; };
 		CD565EEC2970075C00B26FC7 /* YoutubeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD565EEA2970075C00B26FC7 /* YoutubeApp.xcdatamodeld */; };
 		CD565EEE2970075E00B26FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD565EED2970075E00B26FC7 /* Assets.xcassets */; };
 		CD565EF12970075E00B26FC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD565EEF2970075E00B26FC7 /* LaunchScreen.storyboard */; };
@@ -21,7 +20,6 @@
 		CD565EE12970075C00B26FC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD565EE32970075C00B26FC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CD565EE52970075C00B26FC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CD565EE82970075C00B26FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD565EEB2970075C00B26FC7 /* YoutubeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YoutubeApp.xcdatamodel; sourceTree = "<group>"; };
 		CD565EED2970075E00B26FC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD565EF02970075E00B26FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 				CD565EE12970075C00B26FC7 /* AppDelegate.swift */,
 				CD565EE32970075C00B26FC7 /* SceneDelegate.swift */,
 				CD565EE52970075C00B26FC7 /* ViewController.swift */,
-				CD565EE72970075C00B26FC7 /* Main.storyboard */,
 				CD565EED2970075E00B26FC7 /* Assets.xcassets */,
 				CD565EEF2970075E00B26FC7 /* LaunchScreen.storyboard */,
 				CD565EF22970075E00B26FC7 /* Info.plist */,
@@ -130,7 +127,6 @@
 			files = (
 				CD565EF12970075E00B26FC7 /* LaunchScreen.storyboard in Resources */,
 				CD565EEE2970075E00B26FC7 /* Assets.xcassets in Resources */,
-				CD565EE92970075C00B26FC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,14 +147,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CD565EE72970075C00B26FC7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD565EE82970075C00B26FC7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CD565EEF2970075E00B26FC7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +284,6 @@
 				INFOPLIST_FILE = YoutubeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -324,7 +311,6 @@
 				INFOPLIST_FILE = YoutubeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
