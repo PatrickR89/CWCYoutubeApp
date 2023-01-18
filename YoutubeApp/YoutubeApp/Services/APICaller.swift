@@ -9,6 +9,8 @@ import Foundation
 
 class APICaller {
 
+    weak var delegate: APICallerDelegate?
+
     func getVideos() {
         let url = URL(string: Constants.API_URL)
 
@@ -18,7 +20,7 @@ class APICaller {
 
         let session = URLSession.shared
 
-        let dataTask = session.dataTask(with: url) { data, response, error in
+        let dataTask = session.dataTask(with: url) { [weak self] data, response, error in
             if error != nil || data == nil {return}
 
             do {
@@ -26,14 +28,17 @@ class APICaller {
                 decoder.dateDecodingStrategy = .iso8601
 
                 let response = try decoder.decode(Response.self, from: data!)
+                guard let data = response.items else {return}
+                self?.delegate?.apiCaller(didRecieve: data)
             } catch {
                 print("error in api caller", error)
             }
-
-
-
         }
 
         dataTask.resume()
     }
+}
+
+protocol APICallerDelegate: AnyObject {
+    func apiCaller(didRecieve reponse: [Video])
 }
