@@ -20,7 +20,18 @@ class APICaller {
 
         let dataTask = session.dataTask(with: url) { data, response, error in
             if error != nil || data == nil {return}
-            print(response)
+
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+
+                let response = try decoder.decode(Response.self, from: data!)
+            } catch {
+                print("error in api caller", error)
+            }
+
+
+
         }
 
         dataTask.resume()
