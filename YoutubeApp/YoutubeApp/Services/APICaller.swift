@@ -20,6 +20,7 @@ class APICaller {
 
         let dataTask = session.dataTask(with: url) { data, response, error in
             if error != nil || data == nil {return}
+            print(response)
         }
 
         dataTask.resume()
