@@ -33,9 +33,11 @@ class ViewController: UIViewController {
     func setupUI() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(VideoCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.backgroundColor = .white
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight = UITableView.automaticDimension
 
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -47,11 +49,13 @@ class ViewController: UIViewController {
 
     func createDataSource() -> UITableViewDiffableDataSource<Int, String> {
         let diffableDataSource = UITableViewDiffableDataSource<Int, String>(tableView: tableView) { [weak self] tableView, indexPath, itemIdentifier in
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .brown
-        cell.textLabel?.text = self?.videos[indexPath.row].title
-        return cell
-    }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? VideoCell else {fatalError()}
+            if let video = self?.videos[indexPath.row] {
+                cell.recieveModel(video)
+            }
+
+            return cell
+        }
         return diffableDataSource
     }
 
