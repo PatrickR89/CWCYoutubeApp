@@ -29,7 +29,9 @@ class APICaller {
 
                 let response = try decoder.decode(Response.self, from: data!)
                 guard let data = response.items else {return}
-                self?.delegate?.apiCaller(didRecieve: data)
+                DispatchQueue.main.async {
+                    self?.delegate?.apiCaller(didRecieve: data)
+                }
             } catch {
                 print("error in api caller", error)
             }
