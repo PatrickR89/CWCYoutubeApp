@@ -23,7 +23,7 @@ class VideoCell: UITableViewCell {
         var stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 10
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .equalCentering
         stackView.alignment = .center
 
         return stackView
@@ -31,21 +31,23 @@ class VideoCell: UITableViewCell {
 
     lazy var thumbView: UIImageView = {
         var imageView = UIImageView()
+        imageView.setContentHuggingPriority(.defaultLow, for: .vertical)
         return imageView
     }()
 
     lazy var titleLabel: UILabel = {
         var titleLabel = UILabel()
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 25)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
         titleLabel.numberOfLines = 0
-        titleLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
+        titleLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
 
         return titleLabel
     }()
 
     lazy var contentLabel: UILabel = {
         var label = UILabel()
-        label.numberOfLines = 15
+        label.numberOfLines = 0
+        label.setContentHuggingPriority(.required, for: .vertical)
 
         return label
     }()
@@ -56,7 +58,6 @@ class VideoCell: UITableViewCell {
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(contentLabel)
         contentView.backgroundColor = .gray
-        thumbView.backgroundColor = .white
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         thumbView.translatesAutoresizingMaskIntoConstraints = false
@@ -70,8 +71,8 @@ class VideoCell: UITableViewCell {
         thumbView.tintColor = .darkGray
 
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            stackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 20),
+            stackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -20),
             stackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             thumbView.leadingAnchor.constraint(lessThanOrEqualTo: stackView.leadingAnchor, constant: 20),
@@ -79,13 +80,41 @@ class VideoCell: UITableViewCell {
             titleLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -20),
             contentLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 20),
-            contentLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -20)
+            contentLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -20),
+            titleLabel.topAnchor.constraint(equalTo: thumbView.bottomAnchor, constant: 20),
+            contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20)
         ])
     }
 
     func recieveModel(_ model: Video) {
         self.titleLabel.text = model.title
-        self.contentLabel.text = model.description
+        let df = DateFormatter()
+        df.dateFormat = "EEEE, d. MMMM, yyyy"
+
+        self.contentLabel.text = df.string(from: model.published)
+
+        guard let url = URL(string: model.thumbnail) else {return}
+        let session = URLSession.shared
+
+        let dataTask = session.dataTask(with: url) { data, response, error in
+            if error != nil {
+                print(error)
+                return
+            }
+
+            guard let data = data else {
+                return
+            }
+
+            let image = UIImage(data: data)
+
+            DispatchQueue.main.async { [weak self] in
+                self?.thumbView.image = image
+                self?.thumbView.tintColor = .none
+            }
+        }
+
+        dataTask.resume()
     }
 
 }
