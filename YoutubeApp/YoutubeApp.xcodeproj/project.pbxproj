@@ -18,6 +18,7 @@
 		CD9486902978168B00CDD7EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD94868F2978168B00CDD7EB /* Constants.swift */; };
 		CD94869229781F0100CDD7EB /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD94869129781F0100CDD7EB /* Response.swift */; };
 		CD948697297964EA00CDD7EB /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD948696297964EA00CDD7EB /* VideoCell.swift */; };
+		CD948699297AD95400CDD7EB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD948698297AD95400CDD7EB /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		CD94868F2978168B00CDD7EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CD94869129781F0100CDD7EB /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		CD948696297964EA00CDD7EB /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		CD948698297AD95400CDD7EB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				CD565EE52970075C00B26FC7 /* ViewController.swift */,
+				CD948698297AD95400CDD7EB /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				CD948697297964EA00CDD7EB /* VideoCell.swift in Sources */,
 				CD565EEC2970075C00B26FC7 /* YoutubeApp.xcdatamodeld in Sources */,
 				CD565EE22970075C00B26FC7 /* AppDelegate.swift in Sources */,
+				CD948699297AD95400CDD7EB /* DetailViewController.swift in Sources */,
 				CD565EE42970075C00B26FC7 /* SceneDelegate.swift in Sources */,
 				CD9486902978168B00CDD7EB /* Constants.swift in Sources */,
 			);

@@ -74,6 +74,9 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailViewController = DetailViewController()
+        detailViewController.openVideo(videos[indexPath.row])
+        navigationController?.pushViewController(detailViewController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

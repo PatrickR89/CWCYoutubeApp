@@ -53,11 +53,11 @@ class VideoCell: UITableViewCell {
     }()
 
     func setupUI() {
+        self.contentView.backgroundColor = .clear
         self.contentView.addSubview(stackView)
         stackView.addArrangedSubview(thumbView)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(contentLabel)
-        contentView.backgroundColor = .gray
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         thumbView.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +65,7 @@ class VideoCell: UITableViewCell {
         titleLabel.text = ""
         contentLabel.text = ""
 
-        thumbView.contentMode = .scaleAspectFit
+        thumbView.contentMode = .scaleAspectFill
         let fillerImage = UIImage(systemName: "photo.artframe", withConfiguration: UIImage.SymbolConfiguration(pointSize: 220.0, weight: .semibold))
         thumbView.image = fillerImage
         thumbView.tintColor = .darkGray
@@ -98,7 +98,7 @@ class VideoCell: UITableViewCell {
 
         let dataTask = session.dataTask(with: url) { data, response, error in
             if error != nil {
-                print(error)
+                print(error!)
                 return
             }
 
